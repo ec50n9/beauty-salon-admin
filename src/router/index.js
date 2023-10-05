@@ -5,23 +5,26 @@ import Home from "../views/home.vue";
 
 Vue.use(VueRouter);
 
-const routes = [{
-  path: "/",
-  name: "Login",
-  component: Login
-}, {
-  path: "/home",
-  name: "Home",
-  component: Home,
-  meta: {
-    type: 'login',
-    allowBack: false
+const routes = [
+  {
+    path: "/",
+    name: "Login",
+    component: Login
+  },
+  {
+    path: "/home",
+    name: "Home",
+    component: Home,
+    meta: {
+      type: "login",
+      allowBack: false
+    }
   }
-}, ];
+];
 
 const router = new VueRouter({
-  mode: 'hash',
-  routes
+  mode: "hash",
+  routes,
 });
 
 export default router;

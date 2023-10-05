@@ -433,7 +433,7 @@ export default {
     // 确定删除
     delNewsSure() {
       this.$axios
-        .post(this.img + "/articleDelete", {
+        .post("/articleDelete", {
           id: this.delId,
         })
         .then((res) => {
@@ -547,7 +547,7 @@ export default {
     // 确定修改
     updateNewsSure() {
       this.$axios
-        .post(this.img + "/articleSave", {
+        .post("/articleSave", {
           id: this.newsId,
           type: this.type,
           title: this.title,
@@ -606,7 +606,7 @@ export default {
         });
       } else {
         this.$axios
-          .post(this.img + "/articleSave", {
+          .post("/articleSave", {
             type: this.type,
             title: this.title,
             content: this.content,
@@ -791,7 +791,7 @@ export default {
     // 获取文章类型
     getArticleTypeGet() {
       this.$axios
-        .post(this.$store.state.baseUrl + "/articleTypeGet")
+        .post("/articleTypeGet")
         .then((res) => {
           console.log("文章类型");
           console.log(res);
@@ -806,7 +806,7 @@ export default {
       this.articleList = [];
       this.articleMsg = "数据加载中...";
       this.$axios
-        .post(this.img + "/articleList", {
+        .post("/articleList", {
           page: this.page,
           pageNum: this.pageNum,
           type: this.newsType == "所有分类目录" ? "" : this.newsType,

@@ -73,7 +73,7 @@ export default {
       this.reserveFilterList = [];
       this.reserveMsg = "数据加载中...";
       this.$axios
-        .post(this.$store.state.baseUrl + "/reserveList")
+        .post("/reserveList")
         .then((res) => {
           console.log("预约列表");
           console.log(res);
